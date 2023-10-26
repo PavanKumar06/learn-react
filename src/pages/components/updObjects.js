@@ -11,8 +11,10 @@ export default function Form() {
                               });
 
   function handleCityChange(e) {
+    //We create a shallow copy in which everything remains the same except for city
     const nextArtwork = { ...person.artwork, city: e.target.value };
     const nextPerson = { ...person, artwork: nextArtwork };
+    //we are creating a new object and updating using this, we are not updating the object, as all objects must be readonly
     setPerson(nextPerson);
   }
 
